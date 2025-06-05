@@ -1,5 +1,3 @@
-[![Current Version](https://img.shields.io/github/package-json/v/rrze-webteam/rrze-plugin-blueprint/main?label=Version)](https://github.com/RRZE-Webteam/rrze-plugin-blueprint) [![Release Version](https://img.shields.io/github/v/release/rrze-webteam/rrze-plugin-blueprint?label=Release+Version)](https://github.com/rrze-webteam/rrze-plugin-blueprint/releases/) [![GitHub License](https://img.shields.io/github/license/rrze-webteam/rrze-plugin-blueprint)](https://github.com/RRZE-Webteam/rrze-plugin-blueprint) [![GitHub issues](https://img.shields.io/github/issues/RRZE-Webteam/rrze-plugin-blueprint)](https://github.com/RRZE-Webteam/rrze-plugin-blueprint/issues)
-
 **RRZE Plugin Blueprint** is a starter framework designed to help developers quickly scaffold and build custom WordPress plugins that follow modern best practices. It provides a solid foundation—complete with PSR-4 autoloading, built-in options handling, a settings page, localization support, and system requirements checks—so you can focus on adding your own functionality rather than reinventing the boilerplate every time.
 
 Key features include:
