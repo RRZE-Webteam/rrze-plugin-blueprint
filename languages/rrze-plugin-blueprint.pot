@@ -1,0 +1,81 @@
+# Copyright (C) 2025 RRZE Webteam
+# This file is distributed under the GNU General Public License Version 3.
+msgid ""
+msgstr ""
+"Project-Id-Version: RRZE Plugin Blueprint 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rrze-plugin-blueprint\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-05T13:47:06+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: rrze-plugin-blueprint\n"
+
+#. Plugin Name of the plugin
+#: rrze-plugin-blueprint.php
+msgid "RRZE Plugin Blueprint"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: rrze-plugin-blueprint.php
+msgid "https://github.com/RRZE-Webteam/rrze-plugin-blueprint"
+msgstr ""
+
+#. Description of the plugin
+#: rrze-plugin-blueprint.php
+msgid "A blueprint for creating WordPress plugins with a focus on multilingual support and best practices."
+msgstr ""
+
+#. Author of the plugin
+#: rrze-plugin-blueprint.php
+msgid "RRZE Webteam"
+msgstr ""
+
+#. Author URI of the plugin
+#: rrze-plugin-blueprint.php
+msgid "https://blogs.fau.de/webworking/"
+msgstr ""
+
+#: includes/Main.php:63
+msgid "Settings"
+msgstr ""
+
+#: includes/Settings.php:98
+#: includes/Settings.php:99
+msgid "Plugin Blueprint"
+msgstr ""
+
+#: includes/Settings.php:118
+msgid "Plugin Blueprint Settings"
+msgstr ""
+
+#: includes/Settings.php:150
+msgid "General Settings"
+msgstr ""
+
+#: includes/Settings.php:152
+msgid "General settings for the Plugin Blueprint."
+msgstr ""
+
+#: includes/Settings.php:159
+#: includes/Settings.php:165
+msgid "Checkbox 1"
+msgstr ""
+
+#. translators: 1: Server WordPress version number, 2: Required WordPress version number.
+#: rrze-plugin-blueprint.php:147
+msgid "The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s."
+msgstr ""
+
+#. translators: 1: Server PHP version number, 2: Required PHP version number.
+#: rrze-plugin-blueprint.php:155
+msgid "The server is running PHP version %1$s. The plugin requires at least PHP version %2$s."
+msgstr ""
+
+#. translators: 1: The plugin name, 2: The error string.
+#: rrze-plugin-blueprint.php:199
+msgid "Plugins: %1$s: %2$s"
+msgstr ""
