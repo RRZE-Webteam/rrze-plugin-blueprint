@@ -168,6 +168,34 @@ class Settings
             $this->menuPage,
             'rrze_plugin_blueprint_general_section'
         );
+
+        add_settings_field(
+            'textfield_1',
+            __('Text Field 1', 'rrze-plugin-blueprint'),
+            function () {
+                printf(
+                    '<input type="text" name="%1$s[textfield_1]" id="rrze-plugin-blueprint-textfield-1" value="%2$s" class="regular-text">',
+                    $this->optionName,
+                    esc_attr($this->options->textfield_1)
+                );
+            },
+            $this->menuPage,
+            'rrze_plugin_blueprint_general_section'
+        );
+
+        add_settings_field(
+            'textarea_1',
+            __('Text Area 1', 'rrze-plugin-blueprint'),
+            function () {
+                printf(
+                    '<textarea name="%1$s[textarea_1]" id="rrze-plugin-blueprint-textarea-1" rows="5" class="large-text">%2$s</textarea>',
+                    $this->optionName,
+                    esc_textarea($this->options->textarea_1)
+                );
+            },
+            $this->menuPage,
+            'rrze_plugin_blueprint_general_section'
+        );
     }
 
     /**
