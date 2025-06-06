@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-05T13:47:06+00:00\n"
+"POT-Creation-Date: 2025-06-06T11:51:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: rrze-plugin-blueprint\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "https://blogs.fau.de/webworking/"
 msgstr ""
 
-#: includes/Main.php:63
+#: includes/Main.php:61
 msgid "Settings"
 msgstr ""
 
@@ -63,6 +63,14 @@ msgstr ""
 #: includes/Settings.php:159
 #: includes/Settings.php:165
 msgid "Checkbox 1"
+msgstr ""
+
+#: includes/Settings.php:174
+msgid "Text Field 1"
+msgstr ""
+
+#: includes/Settings.php:188
+msgid "Text Area 1"
 msgstr ""
 
 #. translators: 1: Server WordPress version number, 2: Required WordPress version number.
