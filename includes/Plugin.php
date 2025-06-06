@@ -56,6 +56,7 @@ class Plugin
      * Constructor.
      * 
      * @param string $pluginFile The full path and filename of the plugin.
+     * @return void
      */
     public function __construct(string $pluginFile)
     {
