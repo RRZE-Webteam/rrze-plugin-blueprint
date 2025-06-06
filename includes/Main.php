@@ -26,27 +26,25 @@ class Main
     protected $settings;
 
     /**
-     * Initialize the plugin.
-     *
-     * This method is called when the plugin is loaded.
-     * It sets up the necessary hooks and initializes the modules based on the configuration.
+     * Constructor for the Main class.
+     * 
+     * This method initializes the plugin by loading options and settings,
+     * and adds a settings link to the plugin action links.
+     * It can also be used to initialize other components or modules of the plugin.
      * 
      * @return void
      */
-    public function loaded()
+    public function __construct()
     {
-        // Optionally, you can load the plugin's options here.
-        // This can be useful if you need to access the options early in the plugin lifecycle.
+        // Load the plugin's options and settings.
         $this->options = (object) Options::getOptions();
-
-        add_filter('plugin_action_links_' . plugin()->getBaseName(), [$this, 'settingsLink']);
-
         $this->settings = new Settings();
 
+        // Add the settings link to the plugin action links.
+        add_filter('plugin_action_links_' . plugin()->getBaseName(), [$this, 'settingsLink']);
+
         // Initialize other modules or components as needed.
-        // For example, you can initialize a custom post type, taxonomy, or any other functionality.
-        // $this->initCustomPostType();
-        // $this->initTaxonomy();
+        // For example, you can initialize a custom post type, taxonomy, or any other functionality.        
     }
 
     /**
