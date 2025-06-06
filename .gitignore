@@ -7,12 +7,6 @@ yarn-error.log*
 /vendor/
 /composer.lock
 
-# WordPress core files (if mistakenly included)
-wp-content/plugins/your-plugin/vendor/
-/wp-content/uploads/
-/wp-content/upgrade/
-/wp-content/*.log
-
 # OS-generated files
 .DS_Store
 Thumbs.db
