@@ -35,14 +35,14 @@ class Options
      * 
      * @var string
      */
-    protected static $optionName = 'rrze_plugin_blueprint_postmeta';
+    private static $optionName = 'rrze_plugin_blueprint';
 
     /**
      * Default options
      * 
      * @return array
      */
-    protected static function defaultOptions(): array
+    private static function defaultOptions(): array
     {
         $options = [
             'checkbox_1' => 0,
