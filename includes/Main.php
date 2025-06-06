@@ -36,12 +36,12 @@ class Main
      */
     public function __construct()
     {
-        // Load the plugin's options and settings.
-        $this->options = (object) Options::getOptions();
-        $this->settings = new Settings();
-
         // Add the settings link to the plugin action links.
         add_filter('plugin_action_links_' . plugin()->getBaseName(), [$this, 'settingsLink']);
+
+        // Optionally initialize options and settings.
+        $this->options = (object) Options::getOptions();
+        $this->settings = new Settings();
 
         // Initialize other modules or components as needed.
         // For example, you can initialize a custom post type, taxonomy, or any other functionality.        
