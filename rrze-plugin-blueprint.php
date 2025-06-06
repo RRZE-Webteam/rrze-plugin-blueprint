@@ -3,7 +3,7 @@
 /*
 Plugin Name:        RRZE Plugin Blueprint
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-plugin-blueprint
-Version:            1.0.0
+Version:            1.0.1
 Description:        A blueprint for creating WordPress plugins with a focus on multilingual support and best practices.
 Author:             RRZE Webteam
 Author URI:         https://blogs.fau.de/webworking/
@@ -209,6 +209,6 @@ function loaded()
         return;
     }
 
-    // If there are no errors, create an instance of the 'Main' class and trigger its 'loaded' method.
-    (new Main)->loaded();
+    // If there are no errors, create an instance of the 'Main' class to initialize the plugin's main functionality.
+    new Main();
 }
