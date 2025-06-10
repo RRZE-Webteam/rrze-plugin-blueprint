@@ -4,6 +4,9 @@ namespace RRZE\PluginBlueprint;
 
 defined('ABSPATH') || exit;
 
+use RRZE\PluginBlueprint\Options;
+use function RRZE\PluginBlueprint\plugin;
+
 /**
  * Settings class
  * 
@@ -70,6 +73,26 @@ class Settings
 
         add_action('admin_menu', [$this, 'adminMenu']);
         add_action('admin_init', [$this, 'adminInit']);
+
+        // Add the settings link to the plugin action links.
+        add_filter('plugin_action_links_' . plugin()->getBaseName(), [$this, 'settingsLink']);
+    }
+
+    /**
+     * Add a settings link to the plugin action links.
+     * 
+     * @param array $links
+     * @return array
+     */
+    public function settingsLink($links)
+    {
+        $settingsLink = sprintf(
+            '<a href="%s">%s</a>',
+            admin_url('options-general.php?page=' . $this->getMenuPage()),
+            __('Settings', 'rrze-plugin-blueprint')
+        );
+        array_unshift($links, $settingsLink);
+        return $links;
     }
 
     /**
