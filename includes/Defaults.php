@@ -2,6 +2,8 @@
 
 namespace RRZE\PluginBlueprint;
 
+use function RRZE\PluginBlueprint\plugin;
+
 defined('ABSPATH') || exit;
 
 /**
@@ -85,15 +87,15 @@ class Defaults
     public function withPrefix(string $key = ''): string
     {
         $rawSlug = plugin()->getSlug();
-        $clean   = preg_replace('/[^a-z0-9]/', '', $rawSlug);
+        $clean = preg_replace('/[^a-z0-9]/', '', $rawSlug);
 
         $keep = min(3, strlen($clean));
         $part = substr($clean, 0, $keep);
 
-        $needed   = 6 - strlen($part);
-        $hash_part = substr(md5($clean), 0, $needed);
+        $needed = 6 - strlen($part);
+        $hash = substr(md5($clean), 0, $needed);
 
-        $prefix = $part . $hash_part;
+        $prefix = $part . $hash;
 
         if (! preg_match('/^[a-z]/', $prefix)) {
             $prefix = 'p' . substr($prefix, 0, 5);
