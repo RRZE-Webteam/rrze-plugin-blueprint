@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License Version 3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RRZE Plugin Blueprint 1.0.1\n"
+"Project-Id-Version: RRZE Plugin Blueprint 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rrze-plugin-blueprint\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-10T08:19:23+00:00\n"
+"POT-Creation-Date: 2025-06-27T10:30:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: rrze-plugin-blueprint\n"
@@ -36,54 +36,160 @@ msgstr ""
 
 #. Author URI of the plugin
 #: rrze-plugin-blueprint.php
-msgid "https://blogs.fau.de/webworking/"
+msgid "https://www.wp.rrze.fau.de/"
 msgstr ""
 
-#: includes/Settings.php:92
-msgid "Settings"
+#: blocks/block-dynamic/src/render.php:23
+msgid "Block with Dynamic Rendering – hello!!!"
 msgstr ""
 
-#: includes/Settings.php:121
-#: includes/Settings.php:122
+#: includes/Common/Settings/Settings.php:406
+msgid "Unnamed tab"
+msgstr ""
+
+#: includes/Common/Settings/Settings.php:562
+msgid "You do not have enough permissions to do that."
+msgstr ""
+
+#: includes/Common/Settings/Settings.php:587
+msgid "Settings saved."
+msgstr ""
+
+#: includes/Common/Settings/templates/settings-page.php:21
+msgid "Settings issues detected."
+msgstr ""
+
+#: includes/Defaults.php:47
 msgid "Plugin Blueprint"
 msgstr ""
 
-#: includes/Settings.php:141
-msgid "Plugin Blueprint Settings"
+#: includes/Defaults.php:48
+msgid "RRZE Plugin Blueprint Settings"
 msgstr ""
 
-#: includes/Settings.php:173
-msgid "General Settings"
+#: includes/Defaults.php:51
+msgid "Enter your text here..."
 msgstr ""
 
-#: includes/Settings.php:175
-msgid "General settings for the Plugin Blueprint."
+#: includes/Main.php:114
+msgid "Books"
 msgstr ""
 
-#: includes/Settings.php:182
-#: includes/Settings.php:188
-msgid "Checkbox 1"
+#: includes/Main.php:115
+msgid "Book"
 msgstr ""
 
-#: includes/Settings.php:197
-msgid "Text Field 1"
+#: includes/Main.php:137
+msgid "Genres"
 msgstr ""
 
-#: includes/Settings.php:211
-msgid "Text Area 1"
+#: includes/Main.php:138
+msgid "Genre"
+msgstr ""
+
+#: includes/Main.php:160
+msgid "Default Title"
+msgstr ""
+
+#: includes/Main.php:206
+msgid "General"
+msgstr ""
+
+#: includes/Main.php:210
+msgid "Checkbox Option"
+msgstr ""
+
+#: includes/Main.php:211
+msgid "Check this option to enable the feature."
+msgstr ""
+
+#: includes/Main.php:217
+msgid "Text Option"
+msgstr ""
+
+#: includes/Main.php:218
+msgid "Enter some text."
+msgstr ""
+
+#: includes/Main.php:225
+msgid "Slug Option"
+msgstr ""
+
+#: includes/Main.php:226
+msgid "Enter a slug."
+msgstr ""
+
+#: includes/Main.php:231
+msgid "The slug can have between 4 and 32 alphanumeric characters."
+msgstr ""
+
+#: includes/Main.php:239
+msgid "Select Option"
+msgstr ""
+
+#: includes/Main.php:240
+msgid "Select an option from the dropdown."
+msgstr ""
+
+#: includes/Main.php:242
+msgid "None"
+msgstr ""
+
+#: includes/Main.php:243
+msgid "One"
+msgstr ""
+
+#: includes/Main.php:244
+msgid "Two"
+msgstr ""
+
+#: includes/Main.php:245
+msgid "Three"
+msgstr ""
+
+#: includes/Main.php:251
+msgid "Please select a valid option."
 msgstr ""
 
 #. translators: 1: Server WordPress version number, 2: Required WordPress version number.
-#: rrze-plugin-blueprint.php:147
+#: rrze-plugin-blueprint.php:170
 msgid "The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s."
 msgstr ""
 
 #. translators: 1: Server PHP version number, 2: Required PHP version number.
-#: rrze-plugin-blueprint.php:155
+#: rrze-plugin-blueprint.php:178
 msgid "The server is running PHP version %1$s. The plugin requires at least PHP version %2$s."
 msgstr ""
 
 #. translators: 1: The plugin name, 2: The error string.
-#: rrze-plugin-blueprint.php:199
+#: rrze-plugin-blueprint.php:222
 msgid "Plugins: %1$s: %2$s"
+msgstr ""
+
+#: blocks/block-dynamic/src/edit.js:35
+msgid "Block with Dynamic Rendering – hello from the editor!"
+msgstr ""
+
+#: blocks/block-static/src/edit.js:35
+msgid "Block with Static Rendering – hello from the editor!"
+msgstr ""
+
+#: blocks/block-dynamic/src/block.json
+msgctxt "block title"
+msgid "Block Dynamic Rendering"
+msgstr ""
+
+#: blocks/block-dynamic/src/block.json
+msgctxt "block description"
+msgid "Example block scaffolded with Create Block tool."
+msgstr ""
+
+#: blocks/block-static/src/block.json
+msgctxt "block title"
+msgid "Block Static Rendering"
+msgstr ""
+
+#: blocks/block-static/src/block.json
+msgctxt "block description"
+msgid "Example of a static rendering block scaffolded with Create Block tool."
 msgstr ""
