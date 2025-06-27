@@ -114,6 +114,21 @@ rrze-plugin-blueprint/
   ```
   This will replace the namespace in all PHP files (except in the `build/` directory).
 
+- **Change the text domain**
+  You can update the text domain throughout the plugin by running:
+  ```sh
+  npm run update:textdomain
+  ```
+  This will replace the textdomain in all PHP and JS files (except in the `build/` directory).
+
+- **Change the plugin slug**
+  You can update the plugin slug throughout the plugin by running:
+  ```sh
+  npm run update:slug
+  ```
+  This will replace the plugin slug in all PHP and JS files (except in the `build/` directory).
+  Note: Don’t forget to change the plugin directory and file names accordingly.
+
 ---
 
 ## Internationalization
