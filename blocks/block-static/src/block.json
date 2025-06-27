@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rrze-plugin-blueprint/block-static",
+	"version": "1.0.0",
+	"title": "Block Static Rendering",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example of a static rendering block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "rrze-plugin-blueprint",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
