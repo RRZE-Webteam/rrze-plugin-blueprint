@@ -169,7 +169,7 @@ class Plugin
      */
     public function getSlug(): string
     {
-        return sanitize_title(dirname($this->basename));
+        return sanitize_key(dirname($this->basename));
     }
 
     /**
