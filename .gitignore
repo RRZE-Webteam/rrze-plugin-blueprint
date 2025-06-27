@@ -31,10 +31,6 @@ desktop.ini
 # Logs and debug files
 *.log
 
-# Generated files
-dist/
-build/
-
 # Sass/Less cache (if you compile CSS)
 .sass-cache/
 .cache/
@@ -61,4 +57,7 @@ ehthumbs.db
 __pycache__/
 
 # Exclude compiled PHP files
-*.php~ 
+*.php~
+
+# Temporary directories
+_tmp/
