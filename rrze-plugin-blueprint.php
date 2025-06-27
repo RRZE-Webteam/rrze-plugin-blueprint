@@ -3,10 +3,10 @@
 /*
 Plugin Name:        RRZE Plugin Blueprint
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-plugin-blueprint
-Version:            1.0.1
+Version:            1.1.0
 Description:        A blueprint for creating WordPress plugins with a focus on multilingual support and best practices.
 Author:             RRZE Webteam
-Author URI:         https://blogs.fau.de/webworking/
+Author URI:         https://www.wp.rrze.fau.de/
 License:            GNU General Public License Version 3
 License URI:        https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:        rrze-plugin-blueprint
@@ -18,7 +18,7 @@ Requires PHP:       8.2
 namespace RRZE\PluginBlueprint;
 
 use RRZE\PluginBlueprint\Main;
-use RRZE\PluginBlueprint\Plugin;
+use RRZE\PluginBlueprint\Common\Plugin\Plugin;
 
 // Prevent direct access to the file.
 // This line ensures that the file is only executed within the context of WordPress.
@@ -110,6 +110,29 @@ function plugin()
     }
 
     // Return the main instance of the Plugin class.
+    return $instance;
+}
+
+/**
+ * Main function to initialize the plugin.
+ *
+ * This function follows the singleton pattern to ensure that only one instance of the Main class is created.
+ * It serves as the entry point for the plugin's functionality and is called when the plugin is loaded.
+ *
+ * @return Main The main instance of the Main class.
+ */
+function main()
+{
+    // Declare a static variable to hold the instance.
+    static $instance;
+
+    // Check if the instance is not already created.
+    if (null === $instance) {
+        // Add a new instance of the Main class.
+        $instance = new Main();
+    }
+
+    // Return the main instance of the Main class.
     return $instance;
 }
 
@@ -209,6 +232,7 @@ function loaded()
         return;
     }
 
-    // If there are no errors, create an instance of the 'Main' class to initialize the plugin's main functionality.
-    new Main();
+    // If system requirements are met, proceed to initialize the main plugin instance.
+    // This will load the main functionality of the plugin.
+    main();
 }
