@@ -39,8 +39,8 @@ class Defaults
     {
         return apply_filters('rrze_plugin_blueprint_defaults', [
             'cpt' => [
-                'name'          => 'book',
-                'taxonomy_name' => 'genre',
+                'name'          => $this->withPrefix('book'),
+                'taxonomy_name' => $this->withPrefix('genre'),
             ],
             'settings' => [
                 'option_name'       => 'rrze_plugin_blueprint_settings',
@@ -74,5 +74,31 @@ class Defaults
     public function all(): array
     {
         return $this->defaults;
+    }
+
+    /**
+     * Prepends a deterministic, 6-char unique prefix to any key.
+     *
+     * @param string $key The raw key to namespace.
+     * @return string The 6-char-prefixed key.
+     */
+    function withPrefix(string $key = ''): string
+    {
+        $rawSlug = plugin()->getSlug();
+        $clean   = preg_replace('/[^a-z0-9]/', '', $rawSlug);
+
+        $keep = min(3, strlen($clean));
+        $part = substr($clean, 0, $keep);
+
+        $needed   = 6 - strlen($part);
+        $hash_part = substr(md5($clean), 0, $needed);
+
+        $prefix = $part . $hash_part;
+
+        if (! preg_match('/^[a-z]/', $prefix)) {
+            $prefix = 'p' . substr($prefix, 0, 5);
+        }
+
+        return $prefix . '_' . sanitize_key($key);
     }
 }
