@@ -53,6 +53,10 @@ rrze-plugin-blueprint/
 │   └── block-static/
 │       ├── README.md
 │       └── src/
+├── build/
+│   └── blocks/
+│       ├── block-dynamic/
+│       └── block-static/
 ├── includes/
 │   ├── Defaults.php
 │   ├── Main.php
