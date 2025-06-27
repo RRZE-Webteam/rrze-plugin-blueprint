@@ -127,6 +127,7 @@ rrze-plugin-blueprint/
   npm run update:slug
   ```
   This will replace the plugin slug in all PHP and JS files (except in the `build/` directory).
+
   Note: Don’t forget to change the plugin directory and file names accordingly.
 
 ---
