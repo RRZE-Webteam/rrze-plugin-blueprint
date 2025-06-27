@@ -1,0 +1,42 @@
+{
+  "name": "rrze-plugin-blueprint",
+  "version": "1.1.0",
+  "description": "A blueprint for creating WordPress plugins with blocks and other components.",
+  "author": "RRZE Webteam",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=24.1.0",
+    "npm": ">=11.3.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.19.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "npm-run-all": "^4.1.5",
+    "replace-in-files-cli": "^3.0.0"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "build:block-static": "wp-scripts build blocks/block-static/src/index.js --output-path=build/blocks/block-static",
+    "build:block-dynamic": "wp-scripts build blocks/block-dynamic/src/index.js --output-path=build/blocks/block-dynamic",
+    "build": "npm-run-all build:* build-plugin",
+    "start:block-static": "wp-scripts start blocks/block-static/src/index.js --output-path=build/blocks/block-static",
+    "start:block-dynamic": "wp-scripts start blocks/block-dynamic/src/index.js --output-path=build/blocks/block-dynamic",
+    "start": "npm-run-all --parallel start:block-static start:block-dynamic",
+    "update:namespace": "replace-in-file \"namespace RRZE\\\\PluginBlueprint;\" \"namespace RRZE\\\\PluginBlueprint;\" \"**/*.php\" --ignore \"build/**\"",
+    "update:textdomain": "replace-in-file \"rrze-plugin-blueprint\" \"rrze-plugin-blueprint\" \"**/*.{php,js}\" --ignore \"build/**\"",
+    "update:slug": "replace-in-file \"rrze_plugin_blueprint\" \"rrze_plugin_blueprint\" \"**/*.{php,js}\" --ignore \"build/**\"",
+    "build-plugin": "node build-plugin.js",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style",
+    "format": "wp-scripts format",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  }
+}
