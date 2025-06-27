@@ -82,7 +82,7 @@ class Defaults
      * @param string $key The raw key to namespace.
      * @return string The 6-char-prefixed key.
      */
-    function withPrefix(string $key = ''): string
+    public function withPrefix(string $key = ''): string
     {
         $rawSlug = plugin()->getSlug();
         $clean   = preg_replace('/[^a-z0-9]/', '', $rawSlug);
