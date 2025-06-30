@@ -3,7 +3,7 @@
 /*
 Plugin Name:        RRZE Plugin Blueprint
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-plugin-blueprint
-Version:            1.1.0
+Version:            1.1.1
 Description:        A blueprint for creating WordPress plugins with a focus on multilingual support and best practices.
 Author:             RRZE Webteam
 Author URI:         https://www.wp.rrze.fau.de/
@@ -151,41 +151,6 @@ function load_textdomain()
 }
 
 /**
- * Check system requirements for the plugin.
- *
- * This method checks if the server environment meets the minimum WordPress and PHP version requirements
- * for the plugin to function properly.
- *
- * @return string An error message string if requirements are not met, or an empty string if requirements are satisfied.
- */
-function systemRequirements(): string
-{
-    // Initialize an error message string.
-    $error = '';
-
-    // Check if the WordPress version is compatible with the plugin's requirement.
-    if (version_compare(get_bloginfo('version'), plugin()->getRequiresWP(), '<')) {
-        $error = sprintf(
-            /* translators: 1: Server WordPress version number, 2: Required WordPress version number. */
-            __('The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s.', 'rrze-plugin-blueprint'),
-            get_bloginfo('version'),
-            plugin()->getRequiresWP()
-        );
-    } elseif (version_compare(PHP_VERSION, plugin()->getRequiresPHP(), '<')) {
-        // Check if the PHP version is compatible with the plugin's requirement.
-        $error = sprintf(
-            /* translators: 1: Server PHP version number, 2: Required PHP version number. */
-            __('The server is running PHP version %1$s. The plugin requires at least PHP version %2$s.', 'rrze-plugin-blueprint'),
-            PHP_VERSION,
-            plugin()->getRequiresPHP()
-        );
-    }
-
-    // Return the error message string, which will be empty if requirements are satisfied.
-    return $error;
-}
-
-/**
  * Handle the loading of the plugin.
  *
  * This function is responsible for initializing the plugin, loading text domains for localization,
@@ -202,20 +167,41 @@ function loaded()
         __NAMESPACE__ . '\load_textdomain'
     );
 
-    // Check system requirements and store any error messages.
-    if ($error = systemRequirements()) {
-        // If there is an error, add an action to display an admin notice with the error message.
-        add_action('admin_init', function () use ($error) {
+    $wpCompatibe = is_wp_version_compatible(plugin()->getRequiresWP());
+    $phpCompatible = is_php_version_compatible(plugin()->getRequiresPHP());
+
+    // Check system requirements.
+    if (! $wpCompatibe || ! $phpCompatible) {
+        // If the system requirements are not met, add an action to display an admin notice.
+        add_action('init', function () use ($wpCompatibe, $phpCompatible) {
             // Check if the current user has the capability to activate plugins.
             if (current_user_can('activate_plugins')) {
-                // Get plugin data to retrieve the plugin's name.
+                // Get the plugin name for display in the admin notice.
                 $pluginName = plugin()->getName();
 
-                // Determine the admin notice tag based on network-wide activation.
+                // Determine the appropriate admin notice tag based on whether the plugin is network activated.
                 $tag = is_plugin_active_for_network(plugin()->getBaseName()) ? 'network_admin_notices' : 'admin_notices';
 
-                // Add an action to display the admin notice.
-                add_action($tag, function () use ($pluginName, $error) {
+                $error = '';
+                if (! $wpCompatibe) {
+                    $error = sprintf(
+                        /* translators: 1: Server WordPress version number, 2: Required WordPress version number. */
+                        __('The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s.', 'vdf-search'),
+                        wp_get_wp_version(),
+                        plugin()->getRequiresWP()
+                    );
+                } elseif (! $phpCompatible) {
+                    $error = sprintf(
+                        /* translators: 1: Server PHP version number, 2: Required PHP version number. */
+                        __('The server is running PHP version %1$s. The plugin requires at least PHP version %2$s.', 'vdf-search'),
+                        PHP_VERSION,
+                        plugin()->getRequiresPHP()
+                    );
+                }
+
+                // Display the error notice in the admin area.
+                // This will show a notice with the plugin name and the error message.
+                add_action('admin_notices', function () use ($pluginName, $error) {
                     printf(
                         '<div class="notice notice-error"><p>' .
                             /* translators: 1: The plugin name, 2: The error string. */
@@ -228,7 +214,7 @@ function loaded()
             }
         });
 
-        // Return to prevent further initialization if there is an error.
+        // If the system requirements are not met, the plugin initialization will not proceed.
         return;
     }
 
