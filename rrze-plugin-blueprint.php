@@ -186,14 +186,14 @@ function loaded()
                 if (! $wpCompatibe) {
                     $error = sprintf(
                         /* translators: 1: Server WordPress version number, 2: Required WordPress version number. */
-                        __('The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s.', 'vdf-search'),
+                        __('The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s.', 'rrze-plugin-blueprint'),
                         wp_get_wp_version(),
                         plugin()->getRequiresWP()
                     );
                 } elseif (! $phpCompatible) {
                     $error = sprintf(
                         /* translators: 1: Server PHP version number, 2: Required PHP version number. */
-                        __('The server is running PHP version %1$s. The plugin requires at least PHP version %2$s.', 'vdf-search'),
+                        __('The server is running PHP version %1$s. The plugin requires at least PHP version %2$s.', 'rrze-plugin-blueprint'),
                         PHP_VERSION,
                         plugin()->getRequiresPHP()
                     );
