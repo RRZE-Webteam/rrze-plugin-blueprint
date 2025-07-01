@@ -3,7 +3,7 @@
 /*
 Plugin Name:        RRZE Plugin Blueprint
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-plugin-blueprint
-Version:            1.1.1
+Version:            1.1.2
 Description:        A blueprint for creating WordPress plugins with a focus on multilingual support and best practices.
 Author:             RRZE Webteam
 Author URI:         https://www.wp.rrze.fau.de/
@@ -176,11 +176,11 @@ function loaded()
         add_action('init', function () use ($wpCompatibe, $phpCompatible) {
             // Check if the current user has the capability to activate plugins.
             if (current_user_can('activate_plugins')) {
+                // Determine the appropriate admin notice tag based on whether the plugin is network activated.
+                $hookName = is_plugin_active_for_network(plugin()->getBaseName()) ? 'network_admin_notices' : 'admin_notices';
+
                 // Get the plugin name for display in the admin notice.
                 $pluginName = plugin()->getName();
-
-                // Determine the appropriate admin notice tag based on whether the plugin is network activated.
-                $tag = is_plugin_active_for_network(plugin()->getBaseName()) ? 'network_admin_notices' : 'admin_notices';
 
                 $error = '';
                 if (! $wpCompatibe) {
@@ -201,7 +201,7 @@ function loaded()
 
                 // Display the error notice in the admin area.
                 // This will show a notice with the plugin name and the error message.
-                add_action('admin_notices', function () use ($pluginName, $error) {
+                add_action($hookName, function () use ($pluginName, $error) {
                     printf(
                         '<div class="notice notice-error"><p>' .
                             /* translators: 1: The plugin name, 2: The error string. */
