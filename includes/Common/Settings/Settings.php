@@ -283,10 +283,6 @@ class Settings
     {
         $this->errors = new Error($this);
         $this->flash = new Flash($this);
-
-        add_action('admin_init', [$this, 'save'], 20);
-        add_action('admin_menu', [$this, 'addToMenu'], 20);
-        add_action('admin_head', [$this, 'styling'], 20);
     }
 
     /**
