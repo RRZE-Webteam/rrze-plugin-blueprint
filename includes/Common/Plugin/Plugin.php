@@ -179,7 +179,7 @@ class Plugin
      */
     public function setData(): object
     {
-        $this->data = get_plugin_data($this->pluginFile, false);
+        $this->data = get_plugin_data($this->pluginFile, false, false);
         return $this;
     }
 
