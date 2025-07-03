@@ -34,6 +34,13 @@ class Defaults
 
     /**
      * Returns the default values, filtered via WordPress.
+     * 
+     * This method loads the default values for the plugin, which can include
+     * custom post types, taxonomies, settings, and other plugin-specific defaults.
+     * The defaults are filtered through `rrze_plugin_blueprint_defaults` to allow
+     * for customization by other plugins or themes.
+     * Do not use translation functions (__(), _e(), _x(), etc.) or apply internationalization filters in this method, 
+     * as the translation system is not initialized at this point in the plugin lifecycle.
      *
      * @return array
      */
@@ -46,12 +53,7 @@ class Defaults
             ],
             'settings' => [
                 'option_name'       => 'rrze_plugin_blueprint_settings',
-                'menu_title'        => __('Plugin Blueprint', 'rrze-plugin-blueprint'),
-                'page_title'        => __('RRZE Plugin Blueprint Settings', 'rrze-plugin-blueprint'),
                 'capability'        => 'manage_options',
-                'checkbox_option'   => false,
-                'text_placeholder'  => __('Enter your text here...', 'rrze-plugin-blueprint'),
-                'select_default'    => 'none',
             ]
             // Add more defaults as needed
         ]);
