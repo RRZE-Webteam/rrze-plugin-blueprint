@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License Version 3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RRZE Plugin Blueprint 1.1.0\n"
+"Project-Id-Version: RRZE Plugin Blueprint 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rrze-plugin-blueprint\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-27T10:30:55+00:00\n"
+"POT-Creation-Date: 2025-07-03T14:34:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: rrze-plugin-blueprint\n"
@@ -43,15 +43,15 @@ msgstr ""
 msgid "Block with Dynamic Rendering – hello!!!"
 msgstr ""
 
-#: includes/Common/Settings/Settings.php:406
+#: includes/Common/Settings/Settings.php:402
 msgid "Unnamed tab"
 msgstr ""
 
-#: includes/Common/Settings/Settings.php:562
+#: includes/Common/Settings/Settings.php:558
 msgid "You do not have enough permissions to do that."
 msgstr ""
 
-#: includes/Common/Settings/Settings.php:587
+#: includes/Common/Settings/Settings.php:583
 msgid "Settings saved."
 msgstr ""
 
@@ -59,110 +59,99 @@ msgstr ""
 msgid "Settings issues detected."
 msgstr ""
 
-#: includes/Defaults.php:47
-msgid "Plugin Blueprint"
-msgstr ""
-
-#: includes/Defaults.php:48
-msgid "RRZE Plugin Blueprint Settings"
-msgstr ""
-
-#: includes/Defaults.php:51
-msgid "Enter your text here..."
-msgstr ""
-
-#: includes/Main.php:114
-msgid "Books"
-msgstr ""
-
-#: includes/Main.php:115
-msgid "Book"
-msgstr ""
-
-#: includes/Main.php:137
+#: includes/Main.php:167
 msgid "Genres"
 msgstr ""
 
-#: includes/Main.php:138
+#: includes/Main.php:168
 msgid "Genre"
 msgstr ""
 
-#: includes/Main.php:160
-msgid "Default Title"
+#: includes/Main.php:243
+#: includes/Main.php:247
+msgid "RRZE Plugin Blueprint Settings"
 msgstr ""
 
-#: includes/Main.php:206
+#: includes/Main.php:250
+msgid "Plugin Blueprint"
+msgstr ""
+
+#: includes/Main.php:254
 msgid "General"
 msgstr ""
 
-#: includes/Main.php:210
+#: includes/Main.php:258
 msgid "Checkbox Option"
 msgstr ""
 
-#: includes/Main.php:211
+#: includes/Main.php:259
 msgid "Check this option to enable the feature."
 msgstr ""
 
-#: includes/Main.php:217
+#: includes/Main.php:265
 msgid "Text Option"
 msgstr ""
 
-#: includes/Main.php:218
+#: includes/Main.php:266
 msgid "Enter some text."
 msgstr ""
 
-#: includes/Main.php:225
+#: includes/Main.php:267
+msgid "Enter your text here..."
+msgstr ""
+
+#: includes/Main.php:273
 msgid "Slug Option"
 msgstr ""
 
-#: includes/Main.php:226
+#: includes/Main.php:274
 msgid "Enter a slug."
 msgstr ""
 
-#: includes/Main.php:231
+#: includes/Main.php:279
 msgid "The slug can have between 4 and 32 alphanumeric characters."
 msgstr ""
 
-#: includes/Main.php:239
+#: includes/Main.php:287
 msgid "Select Option"
 msgstr ""
 
-#: includes/Main.php:240
+#: includes/Main.php:288
 msgid "Select an option from the dropdown."
 msgstr ""
 
-#: includes/Main.php:242
+#: includes/Main.php:290
 msgid "None"
 msgstr ""
 
-#: includes/Main.php:243
+#: includes/Main.php:291
 msgid "One"
 msgstr ""
 
-#: includes/Main.php:244
+#: includes/Main.php:292
 msgid "Two"
 msgstr ""
 
-#: includes/Main.php:245
+#: includes/Main.php:293
 msgid "Three"
 msgstr ""
 
-#: includes/Main.php:251
+#: includes/Main.php:299
 msgid "Please select a valid option."
 msgstr ""
 
 #. translators: 1: Server WordPress version number, 2: Required WordPress version number.
-#: rrze-plugin-blueprint.php:170
+#: rrze-plugin-blueprint.php:189
 msgid "The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s."
 msgstr ""
 
 #. translators: 1: Server PHP version number, 2: Required PHP version number.
-#: rrze-plugin-blueprint.php:178
+#: rrze-plugin-blueprint.php:196
 msgid "The server is running PHP version %1$s. The plugin requires at least PHP version %2$s."
 msgstr ""
 
 #. translators: 1: The plugin name, 2: The error string.
-#: rrze-plugin-blueprint.php:222
+#: rrze-plugin-blueprint.php:208
 msgid "Plugins: %1$s: %2$s"
 msgstr ""
 
