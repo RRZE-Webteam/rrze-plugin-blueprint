@@ -3,7 +3,7 @@
 /*
 Plugin Name:        RRZE Plugin Blueprint
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-plugin-blueprint
-Version:            1.1.2
+Version:            1.2.0
 Description:        A blueprint for creating WordPress plugins with a focus on multilingual support and best practices.
 Author:             RRZE Webteam
 Author URI:         https://www.wp.rrze.fau.de/
@@ -167,11 +167,11 @@ function loaded()
         __NAMESPACE__ . '\load_textdomain'
     );
 
-    $wpCompatibe = is_wp_version_compatible(plugin()->getRequiresWP());
-    $phpCompatible = is_php_version_compatible(plugin()->getRequiresPHP());
-
     // Check system requirements.
-    if (! $wpCompatibe || ! $phpCompatible) {
+    if (
+        ! $wpCompatibe = is_wp_version_compatible(plugin()->getRequiresWP())
+            || ! $phpCompatible = is_php_version_compatible(plugin()->getRequiresPHP())
+    ) {
         // If the system requirements are not met, add an action to display an admin notice.
         add_action('init', function () use ($wpCompatibe, $phpCompatible) {
             // Check if the current user has the capability to activate plugins.
